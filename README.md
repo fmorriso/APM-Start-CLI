@@ -8,7 +8,32 @@ Deborak Kurata's Angular Routing APM-Start example used in her Pluralsight cours
 
 [Deborah Kurata's GitHub](https://github.com/DeborahK/Angular-Routing)
 
+## Other tools used
 
+* Angular-CLI 1.0.0
+* JetBrains WebStorm 2017.1.2
+* npm-check-updates 2.11.0
+* TypeScript 2.2.2
+
+## ng build cautionary tale
+
+I have learned the hard way to use the following for build:
+
+```
+ng build --verbose --progress --vendor-chunk --extract-css --prod
+```
+
+If you leave off `--prod`, your build may not spot all of the errors in your project.  
+And yes, I will be the first to agree that putting `--prod` on `ng build` seems like overkill, but trust me, you want to find out from ng build what is wrong with your project, not `ng serve`.
+You will be amazed how many errors that `ng build --prod` uncovers that `ng build` remains blissfully unware of.
+ 
+In fact, I routinely replace the default generated `scripts` in .angular-cli.json with these:
+```angular2html
+    "build": "ng build --verbose --progress --vendor-chunk --extract-css",
+    "build-prod": "ng build --verbose --progress --vendor-chunk --extract-css --prod",
+    "start": "ng serve --open --verbose --vendor-chunk --extract-css",
+    "start-prod": "ng serve --open --verbose --vendor-chunk --extract-css --prod",
+```
 ## Development server
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
