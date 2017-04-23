@@ -25,7 +25,7 @@ ng build --verbose --progress --vendor-chunk --extract-css --prod
 
 If you leave off `--prod`, your build may not spot all of the errors in your project.  
 
-And yes, I will be the first to agree that putting `--prod` on `ng build` seems like overkill, but trust me, you want to find out from ng build what is wrong with your project, not `ng serve`.
+And yes, I will be the first to agree that putting `--prod` on `ng build` seems like overkill, but trust me, you want to find out from `ng build --prod` what is wrong with your project, not from `ng serve --prod`.
 
 You will be amazed how many errors that `ng build --prod` uncovers that `ng build` remains blissfully unware of.
  
