@@ -29,7 +29,7 @@ And yes, I will be the first to agree that putting `--prod` on `ng build` seems 
 
 You will be amazed how many errors that `ng build --prod` uncovers that `ng build` remains blissfully unware of.
  
-In fact, I routinely replace the default generated `scripts` in .angular-cli.json with these:
+In fact, I routinely replace the default generated `scripts` in package.json with these:
 ```angular2html
     "build": "ng build --verbose --progress --vendor-chunk --extract-css",
     "build-prod": "ng build --verbose --progress --vendor-chunk --extract-css --prod",
