@@ -1,6 +1,6 @@
 import { APMRoutedPage } from './app.po';
 
-describe('apm-routed App', () => {
+describe('apm-start-cli App', () => {
   let page: APMRoutedPage;
 
   beforeEach(() => {
