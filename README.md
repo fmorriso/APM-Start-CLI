@@ -10,14 +10,23 @@ Deborak Kurata's Angular Routing APM-Start example used in her Pluralsight cours
 
 ## Other tools used
 
-* Angular-CLI 1.0.0
-* JetBrains WebStorm 2017.1.2
-* npm-check-updates 2.11.0
-* TypeScript 2.2.2
+* [Angular-CLI 1.0.1](https://github.com/angular/angular-cli/wiki)
+* [JetBrains WebStorm 2017.1.2](https://www.jetbrains.com/webstorm/)
+* [npm-check-updates 2.11.0](https://www.npmjs.com/package/npm-check-updates)
+* [TypeScript 2.2.2](https://www.npmjs.com/package/typescript)
+
+## zone.js cautionary tale
+As of April 24, 2017, zone.js 0.8.8 and Angular 4.0.3 __do not play nice togeher__, so you need to keep zone.js at 0.8.7 or earlier.
+
+If you upgraded to zone.js 0.8.8 and want to avoid errors appearing in your browser's Developer Tools console window, downgrade to zone.js 0.8.7 or earlier by performing the following:
+```angular2html
+cd yourProjectDirectory
+npm install -S zone.js@0.8.7
+```
 
 ## ng build cautionary tale
 
-I have learned the hard way to use the following for build:
+I have learned the hard way to use the following for building the project:
 
 ```
 ng build --verbose --progress --vendor-chunk --extract-css --prod
